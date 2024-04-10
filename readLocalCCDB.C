@@ -48,7 +48,7 @@ void readLocalCCDB(long ts = 9999999999000, const char* ccdb = "localhost:8080")
 		
 	 // cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/ChargeCut number %i.eps", cnt));
 	 // cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/ChargeCut number %i.png", cnt));
-		cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/LOCAL_ChargeCut number %i.eps", cnt));
+		cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/LOCAL_ChargeCut_number_%i.eps", cnt));
 		cnt++;
 	}
 
@@ -59,7 +59,7 @@ void readLocalCCDB(long ts = 9999999999000, const char* ccdb = "localhost:8080")
 	for (TF1& tf1 : *mRefIndex) {
 		std::unique_ptr<TCanvas> cRefIndex = std::make_unique<TCanvas>(Form("LOCAL_RefIndex number %i", cnt), Form("LOCAL_RefIndex number %i", cnt), 1200, 400);
 		tf1.Draw();
-	 // cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex number %i.eps", cnt));
+	 	cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex_number_%i.eps", cnt));
 		//cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex number %i.png", cnt));
 		//cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/LOCAL_RefIndex number %i.eps", cnt));
 		cnt++;

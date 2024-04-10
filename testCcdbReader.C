@@ -60,8 +60,8 @@ void testCcdbReader(const char* ccdbURI = "http://ccdb-test.cern.ch:8080", long 
 		  tf1.Draw();
 		  
 		 // cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/ChargeCut number %i.eps", cnt));
-		 // cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/ChargeCut number %i.png", cnt));
-		  cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/CCDB_ChargeCut number %i.eps", cnt));
+		  cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/ChargeCut_number _%i.png", cnt));
+		  cChargeCut->SaveAs(Form("/root/hmpidTest/img/HV/CCDB_ChargeCut_number_%i.eps", cnt));
 		  cnt++;
 		}
 
@@ -72,8 +72,8 @@ void testCcdbReader(const char* ccdbURI = "http://ccdb-test.cern.ch:8080", long 
 		for (TF1& tf1 : *mRefIndex) {
 		  std::unique_ptr<TCanvas> cRefIndex = std::make_unique<TCanvas>(Form("CCDB_RefIndex number %i", cnt), Form("CCDB_RefIndex number %i", cnt), 1200, 400);
 		  tf1.Draw();
-		 // cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex number %i.eps", cnt));
-		  //cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex number %i.png", cnt));
+		  cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex_number_%i.eps", cnt));
+		  cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/RefIndex_number_%i.png", cnt));
 		  //cRefIndex->SaveAs(Form("/root/hmpidTest/img/HV/CCDB_RefIndex number %i.eps", cnt));
 		  cnt++;
 		}
